@@ -24,6 +24,7 @@ const renderElement = ({ tagName, attrs, children, element }) => {
     // this actually create children elements & append them to parent node
 
     const $child = render(child);
+
     if ($child) {
       if (customElements.get(tagName)) {
         // $el.shadowRoot.appendChild($child);

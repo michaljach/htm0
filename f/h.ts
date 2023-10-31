@@ -10,6 +10,7 @@ type VTree = {
 export const h = (tag, attrs, ...children): VTree => {
   const isComponent = typeof tag === "function";
   const tagName = isComponent ? getComponentName(tag) : tag;
+
   if (isComponent && !customElements.get(tagName)) {
     customElements.define(tagName, tag);
   }

@@ -1,26 +1,24 @@
 import { diff } from "./diff";
 import { render } from "./render";
 
-type Props = {
-  children?: string | Element;
-  [key: string]: any;
-};
-
-export class Component<P extends Props = {}> extends HTMLElement {
-  props = {} as P & Props;
+export class Component extends HTMLElement {
   state = {};
 
-  __prevTree;
+  __v;
 
-  connectedCallback() {
+  constructor() {
+    super();
+
     // Create a shadow root
     this.attachShadow({ mode: "open" });
+  }
 
+  connectedCallback() {
     // Create virtual-dom tree
-    this.__prevTree = this.render();
+    this.__v = this.render();
 
     // Create real-dom tree
-    const html = render(this.__prevTree);
+    const html = render(this.__v);
     this.shadowRoot.appendChild(html);
 
     // Observe state changes
@@ -34,11 +32,11 @@ export class Component<P extends Props = {}> extends HTMLElement {
   }
 
   diff() {
-    if (this.__prevTree) {
+    if (this.__v) {
       const newTree = this.render();
-      const patch = diff(this.__prevTree, newTree);
+      const patch = diff(this.__v, newTree);
       patch(this.shadowRoot.firstElementChild);
-      this.__prevTree = newTree;
+      this.__v = newTree;
     }
   }
 

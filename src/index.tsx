@@ -4,7 +4,7 @@ import Home from "./pages/home";
 class AppComponent extends Component {
   render() {
     return (
-      <div class="siema">
+      <div class="app">
         <Home />
       </div>
     );
