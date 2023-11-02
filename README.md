@@ -2,11 +2,12 @@
 
 - super simple
 - super small (2 KB)
-- super fast (~47 FCP)
+- super fast (~47ms FCP)
 - jsx support
 - vitual dom
 - shared state
 - local state
+- events
 
 ## Install
 
@@ -78,4 +79,22 @@ class UserData extends Data {
 }
 
 export const userData = new UserData();
+```
+
+## Example Event
+
+```
+import { Component } from 'framework';
+
+class AppComponent extends Component {
+  click() {
+    console.log('hi');
+  }
+
+  render() {
+    return (
+      <button click={this.click}>click me</button>
+    );
+  }
+}
 ```
