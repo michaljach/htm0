@@ -1,5 +1,15 @@
 {
+  "name": "wc",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
   "devDependencies": {
     "esbuild": "^0.19.5"
-  }
+  },
+  "scripts": {
+    "start": "",
+    "build": "node esbuild.mjs"
+  },
+  "author": "Michael Jach <michaljach@gmail.com>",
+  "license": "MIT"
 }

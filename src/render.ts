@@ -5,6 +5,7 @@ const renderElement = ({ tagName, attrs, children, element }) => {
   for (const [attr, val] of Object.entries(attrs || {})) {
     switch (attr) {
       case "click":
+      case "keyup":
         $el.addEventListener(attr, val);
         break;
 

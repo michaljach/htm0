@@ -52,7 +52,7 @@ const diffAttrs = (oldAttrs, newAttrs) => {
       }
     } else {
       for (const [attr, val] of Object.entries(newAttrs || {})) {
-        if (attr !== "click") {
+        if (attr !== "click" && attr !== "keyup") {
           $node.setAttribute(attr, val);
         }
       }
