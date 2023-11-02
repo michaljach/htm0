@@ -1,6 +1,7 @@
 # Framework needs name
 
 - super simple
+- 0 dependency
 - super small (2 KB)
 - super fast (~47ms FCP)
 - jsx support
