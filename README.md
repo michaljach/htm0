@@ -1,9 +1,12 @@
-# Framework needs name
+# htm0
+
+Fast and elegant Web Components framwork
 
 - super simple
 - 0 dependency
 - super small (2 KB)
 - super fast (~47ms FCP)
+- native web components
 - jsx support
 - vitual dom
 - shared state
@@ -13,13 +16,13 @@
 ## Install
 
 ```
-npx framework ./
+npm i htm0
 ```
 
 ## Example Component
 
 ```
-import { Component } from 'framework';
+import { Component } from 'htm0';
 
 class AppComponent extends Component {
   render() {
@@ -35,7 +38,7 @@ class AppComponent extends Component {
 ## Example Stateful Component
 
 ```
-import { Component } from 'framework';
+import { Component } from 'htm0';
 
 class AppComponent extends Component {
     state = {
@@ -55,7 +58,7 @@ class AppComponent extends Component {
 ## Example Shared State
 
 ```
-import { Component, data } from 'framework';
+import { Component, data } from 'htm0';
 import { userData } from './userData'
 
 @data(userData, 'user')
@@ -85,7 +88,7 @@ export const userData = new UserData();
 ## Example Event
 
 ```
-import { Component } from 'framework';
+import { Component } from 'htm0';
 
 class AppComponent extends Component {
   click() {
