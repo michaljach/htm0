@@ -1,14 +1,15 @@
 {
   "name": "htm0",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Fast and elegant Web Components framework",
   "main": "dist/index.js",
   "devDependencies": {
-    "esbuild": "^0.19.5"
+    "esbuild": "^0.19.5",
+    "esbuild-config": "^1.0.1"
   },
   "scripts": {
     "start": "",
-    "build": "node esbuild.mjs"
+    "build": "esbuild $(esbuild-config)"
   },
   "author": "Michael Jach <michaljach@gmail.com>",
   "license": "MIT"

@@ -1,0 +1,11 @@
+{
+  "entry": ["./src/index", "./src/h"],
+  "outdir": "dist",
+  "bundle": true,
+  "loader": { ".ts": "ts" },
+  "jsx-factory": "h",
+  "chunk-names": "chunks/[name]-[hash]",
+  "format": "esm",
+  "splitting": true,
+  "minify": true
+}
