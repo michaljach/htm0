@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    ENV: string;
+  }
+}
+
 export const getComponentName = (component) =>
   component.name[0].toLowerCase() +
   component.name
@@ -9,4 +15,9 @@ export const render = (component, target) => {
   customElements.define(name, component);
   const root = document.createElement(name);
   target.appendChild(root);
+  if (window.ENV === "development") {
+    new EventSource("/esbuild").addEventListener("change", () =>
+      location.reload()
+    );
+  }
 };

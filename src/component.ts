@@ -2,6 +2,8 @@ import { diff } from "./diff";
 import { render } from "./render";
 
 export class Component extends HTMLElement {
+  styles;
+
   state = {};
 
   __v;
@@ -14,6 +16,13 @@ export class Component extends HTMLElement {
   }
 
   connectedCallback() {
+    // Create local style element
+    if (this.styles) {
+      const style = document.createElement("style");
+      style.innerHTML = this.styles;
+      this.shadowRoot.appendChild(style);
+    }
+
     // Create virtual-dom tree
     this.__v = this.render();
 
