@@ -4,6 +4,7 @@ import { render } from "./render";
 export class Component extends HTMLElement {
   styles;
 
+  props: { [key: string]: any } = {};
   state = {};
 
   __v;
@@ -16,19 +17,20 @@ export class Component extends HTMLElement {
   }
 
   connectedCallback() {
+    // Create virtual-dom tree
+    this.__v = this.render();
+
+    // Create real-dom tree
+    const html = render(this.__v);
+
+    this.shadowRoot.replaceChildren(html);
+
     // Create local style element
     if (this.styles) {
       const style = document.createElement("style");
       style.innerHTML = this.styles;
       this.shadowRoot.appendChild(style);
     }
-
-    // Create virtual-dom tree
-    this.__v = this.render();
-
-    // Create real-dom tree
-    const html = render(this.__v);
-    this.shadowRoot.appendChild(html);
 
     // Observe state changes
     this.state = new Proxy(this.state, {

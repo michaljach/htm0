@@ -7,5 +7,6 @@
   "chunk-names": "chunks/[name]-[hash]",
   "format": "esm",
   "splitting": true,
-  "minify": true
+  "minify": true,
+  "keep-names": true
 }
