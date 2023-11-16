@@ -22,7 +22,6 @@ export class Component extends HTMLElement {
 
     // Create real-dom tree
     const html = render(this.__v);
-
     this.shadowRoot.replaceChildren(html);
 
     // Create local style element

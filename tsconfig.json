@@ -5,6 +5,8 @@
     "moduleResolution": "NodeNext",
     "jsx": "preserve",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "jsxFactory": "h"
   }
 }

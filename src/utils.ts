@@ -20,4 +20,6 @@ export const render = (component, target) => {
       location.reload()
     );
   }
+
+  return { container: root.shadowRoot, component: root };
 };
